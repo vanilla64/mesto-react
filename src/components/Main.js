@@ -1,25 +1,17 @@
 import React from 'react'
 import avatarPath from '../images/avatar.jpg'
+import api from '../utils/Api'
 
-function Main() {
+function Main(props) {
 
-  function handleEditAvatarClick() {
-    document.querySelector('.popup_type_avatar-upd').classList.add('popup_opened')
-  }
-
-  function handleEditProfileClick() {
-    document.querySelector('.popup_type_edit-profile').classList.add('popup_opened')
-  }
-
-  function handleAddPlaceClick() {
-    document.querySelector('.popup_type_add-card').classList.add('popup_opened')
-  }
+  api.getUserInfo()
+  .then(res => console.log(res))
 
   return (
     <main className="content">
       <section className="profile">
         <div className="profile__avatar" 
-          onClick={handleEditAvatarClick}>
+          onClick={props.onEditAvatar}>
           <img className="profile__img" src={avatarPath} alt="Аватар" />
         </div>
         <div className="profile__user-info">
@@ -27,10 +19,10 @@ function Main() {
           <p className="profile__subtitle">Исследователь</p>
         </div>
         <button className="profile__edit-button"
-          onClick={handleEditProfileClick}></button>
+          onClick={props.onEditProfile}></button>
         <div className="profile__container">
           <button className="profile__add-button" 
-            onClick={handleAddPlaceClick}></button>
+            onClick={props.onAddPlace}></button>
         </div>
       </section>
 
