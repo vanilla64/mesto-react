@@ -1,10 +1,9 @@
 import React from 'react'
-import Preloader from '../components/Preloader'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import PopupWithForm from '../components/PopupWithForm'
-import ImagePopup from '../components/ImagePopup';
+import ImagePopup from '../components/ImagePopup'
 
 function App() {
 
@@ -20,24 +19,30 @@ function App() {
     setAddPlacePopupOpen(true)
   }
 
+  function handleCardClick(card) {
+    setSelectedCard(card)
+  }
+
   function closeAllPopups() {
     setEditAvatarPopupOpen(false)
     setEditProfilePopupOpen(false)
     setAddPlacePopupOpen(false)
+    setSelectedCard(null)
   }
   
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false)
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false)
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false)
+  const [selectedCard, setSelectedCard] = React.useState(null)
 
   return (
     <div className="page">
-      <Preloader />
       <Header />
       <Main  
         onEditAvatar={handleEditAvatarClick}
         onEditProfile={handleEditProfileClick}
         onAddPlace={handleAddPlaceClick}
+        onCardClick={handleCardClick}
       />
       <Footer />
       <PopupWithForm
@@ -127,21 +132,10 @@ function App() {
         </>
       </PopupWithForm>
 
-      <ImagePopup />
-
-      <template id="card-template">
-        <li className="element">
-          <button className="element__delete-button"></button>
-          <img className="element__image" src="#" alt="" />
-          <div className="element__heading">
-            <h2 className="element__title"> </h2>
-            <div className="element__like-container">
-              <button className="element__like-button"></button>
-              <span className="element__like-counter">0</span>
-            </div>
-          </div>
-        </li>
-      </template>
+      <ImagePopup 
+        card={selectedCard}
+        onClose={closeAllPopups}
+      />
     </div>
   )
 }
