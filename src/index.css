@@ -1,11 +1,6 @@
 @import url('./vendor/normalize.css');
 /* @import url('./blocks/content/content.css'); */
-<<<<<<< HEAD
-/* @import url('./fonts/inter-web/inter.css'); */
-/* @import url('./blocks/preloader/preloader.css'); */
-=======
 @import url('./fonts/inter-web/inter.css');
->>>>>>> 3f30e74402537c2d2601126f5ca7607846da96e8
 @import url('./blocks/root/root.css');
 @import url('./blocks/page/page.css');
 @import url('./blocks/header/header.css');
