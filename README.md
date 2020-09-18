@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# Mesto
+
+### [Посмотреть](https://vanilla64.github.io/mesto-react/)
+
+### Проект верстки учебного макета в [Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4), для отработки навыков программирования на языке **JavaScript** на курсе **Web-разработчик** от [Яндекс.Практикума](https://praktikum.yandex.ru) 
+
+#### Технологии используемые в проекте: 
+* HTML;
+* CSS;
+* БЭМ;
+* ООП;
+* JavaScript
+* React
+
+##### Сергей Машин [VK](https://vk.com/vanilla64)
+>>>>>>> 3f30e74402537c2d2601126f5ca7607846da96e8
