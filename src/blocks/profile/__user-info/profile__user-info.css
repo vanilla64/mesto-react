@@ -1,0 +1,28 @@
+.profile__user-info {
+  grid-column: 2 / 3;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__user-info {
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    -ms-align-items: center;
+    align-items: center;
+    margin: 10px 0 26px;
+  }
+}

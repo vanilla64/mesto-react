@@ -1,0 +1,12 @@
+.element__heading {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 21px 21px 24px;
+}

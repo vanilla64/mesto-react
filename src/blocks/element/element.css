@@ -1,0 +1,19 @@
+@import url('./__image/element__image.css');
+@import url('./__heading/element__heading.css');
+@import url('./__title/element__title.css');
+@import url('./__delete-button/element__delete-button.css');
+@import url('./__like-button/element__like-button.css');
+@import url('./__like-container/element__like-container.css');
+@import url('./__like-counter/element__like-counter.css');
+
+.element {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
