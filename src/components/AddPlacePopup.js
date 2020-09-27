@@ -5,11 +5,11 @@ function AddPlacePopup(props) {
   const [location, setLocation] = React.useState('')
   const [link, setLink] = React.useState('')
   
-  function handleCangeLocation(evt) {
+  function handleChangeLocation(evt) {
     setLocation(evt.target.value)
   }
 
-  function handleCangeLink(evt) {
+  function handleChangeLink(evt) {
     setLink(evt.target.value)
   }
 
@@ -36,7 +36,7 @@ function AddPlacePopup(props) {
           <input 
             id="location-input" 
             value={location ? location : ''}
-            onChange={handleCangeLocation}
+            onChange={handleChangeLocation}
             name="location" 
             className="popup__input popup__input_text_location"
             type="text"
@@ -50,7 +50,7 @@ function AddPlacePopup(props) {
           <input 
             id="link-input" 
             value={link ? link : ''}
-            onChange={handleCangeLink}
+            onChange={handleChangeLink}
             name="link" 
             className="popup__input popup__input_text_link"
             type="url"

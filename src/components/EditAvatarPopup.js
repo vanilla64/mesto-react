@@ -3,18 +3,13 @@ import PopupWithForm from './PopupWithForm'
 
 function EditAvatarPopup(props) {
 
-  const [inputValue, setInputValue] = React.useState('')
   const avatarRef = React.useRef()
-
-  function handleCange(evt) {
-    setInputValue(evt.target.value)
-  }
 
   function handleSubmit(evt) {
     evt.preventDefault()
 
     props.onUpdateAvatar({
-      avatar: inputValue,
+      avatar: avatarRef.current.value,
     })
   }
 
@@ -34,7 +29,6 @@ function EditAvatarPopup(props) {
             id="link-input-avatar" 
             name="linkavatar" 
             ref={avatarRef} 
-            onChange={handleCange} 
             className="popup__input popup__input_text_link" 
             type="url"
             placeholder="Ссылка на картинку" 

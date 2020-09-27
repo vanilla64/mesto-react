@@ -22,7 +22,7 @@ function App() {
   React.useEffect(() => {
     api.getUserInfo().then((res) => {
       setCurrentUser(res)
-    })
+    }).catch((err) => {console.log(err)})
   }, [])
 
   React.useEffect(() => {
@@ -40,8 +40,7 @@ function App() {
         (updCard) => updCard._id === card._id ? res : updCard)
 
       setCards(newCards)
-    })
-      .catch((err) => { console.log(err) })
+    }).catch((err) => {console.log(err)})
   }
 
   function handleCardDelete(card) {
@@ -51,8 +50,8 @@ function App() {
       setCards(newCards)
       api.getInitialCards().then((res) => {
         setCards(res)
-      })
-    })
+      }).catch((err) => {console.log(err)})
+    }).catch((err) => {console.log(err)})
   }
 
   function handleEditAvatarClick() {
@@ -78,7 +77,7 @@ function App() {
         api.getUserInfo().then((res) => {
           setCurrentUser(res)
           closeAllPopups()
-        })
+        }).catch((err) => {console.log(err)})
       }).catch((err) => {console.log(err)})
   }
 
@@ -89,7 +88,7 @@ function App() {
           .then((res) => {
             setCurrentUser(res)
             closeAllPopups()
-          })
+          }).catch((err) => {console.log(err)})
       }).catch((err) => {console.log(err)})
   }
 
@@ -99,7 +98,7 @@ function App() {
         setCards([...cards, res])
         api.getInitialCards().then((res) => {
           setCards(res)
-        })
+        }).catch((err) => {console.log(err)})
 
         closeAllPopups()
       }).catch((err) => {console.log(err)})
