@@ -20,57 +20,36 @@ export class Api {
     })
   }
 
-  likeCardToggle(id, isLiked, counter, likeBtn) {
-    if (!isLiked) {
-
-      this._setlike(id)
-      .then((res) => {
-        likeBtn.classList.toggle('element__like-button_pressed')
-        counter.textContent = parseInt(res.likes.length)
+  changeLikeCardStatus(id, isLicked) {
+    if (!isLicked) {
+      return fetch(`${this._url}${'/cards/likes'}/${id}`, {
+        method: 'PUT',
+        headers: {
+          authorization: this._token,
+          'Content-Type': 'application/json'
+        }
       })
-      .catch(err => console.log(err))
-
-    } else if (isLiked) {
-      
-      this._removeLike(id)
       .then((res) => {
-        likeBtn.classList.toggle('element__like-button_pressed')
-        counter.textContent = parseInt(res.likes.length)
+        if (res.ok) {
+          return res.json()
+        }
+        return Promise.reject(`Ошибка: ${res.status}`)
       })
-      .catch(err => console.log(err))
+    } else if (isLicked) {
+      return fetch(`${this._url}${'/cards/likes'}/${id}`, {
+        method: 'DELETE',
+        headers: {
+          authorization: this._token,
+          'Content-Type': 'application/json'
+        }
+      })
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        }
+        return Promise.reject(`Ошибка: ${res.status}`)
+      })
     }
-  }
-
-  _setlike(id) {
-    return fetch(`${this._url}${'/cards/likes'}/${id}`, {
-      method: 'PUT',
-      headers: {
-        authorization: this._token,
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((res) => {
-      if (res.ok) {
-        return res.json()
-      }
-      return Promise.reject(`Ошибка: ${res.status}`)
-    })
-  }
-
-  _removeLike(id) {
-    return fetch(`${this._url}${'/cards/likes'}/${id}`, {
-      method: 'DELETE',
-      headers: {
-        authorization: this._token,
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((res) => {
-      if (res.ok) {
-        return res.json()
-      }
-      return Promise.reject(`Ошибка: ${res.status}`)
-    })
   }
   
   getUserInfo() {
